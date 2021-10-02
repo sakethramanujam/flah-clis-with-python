@@ -12,31 +12,32 @@ def cli():
     """
 
 
-@ cli.command("add")
+@ cli.command("add", help="Add a task to the list, example: td add 'do this'")
 @ click.argument("desc", type=str)
 def add(desc):
     add_task(desc)
     click.echo(f"Task {desc} added to the list!")
 
 
-@ cli.command("show")
+@ cli.command("show", help="Displays all the tasks in the list example: td show")
 @ click.option("-n", "-n-tasks", type=int, help="Optional Argument to show only a particular number of tasks")
 def show(n):
     show_tasks(n)
 
 
-@ cli.command("del")
+@ cli.command("del", help="Delete a task from the list by passing it's id example: td del -tid abcdef")
+@click.argument("taskid")
 @ click.option("-tid", "--taskid", type=str,
                help="id of the task to be deleted, run `td show` to find out the id")
 def delete(taskid):
     if not taskid:
         print("Cannot pass an empty id")
         return 1
-    remove_task(id=taskid)
+    remove_task(taskid=taskid)
     return 0
 
 
-@ cli.group("update")
+@ cli.group("update", help="Update a given task using it's id")
 def update():
     pass
 

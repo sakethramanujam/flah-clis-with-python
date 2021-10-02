@@ -5,7 +5,7 @@ setup(
     version="0.0.1",
     include_package_data=True,
     install_requires=["click"],
-    packages=find_packages(),
+    packages=find_packages(), 
     entry_points="""
         [console_scripts]
         td=todo.cli:cli
