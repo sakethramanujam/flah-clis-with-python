@@ -1,5 +1,5 @@
 import click
-from operations.main import add_task, showtasks
+from .operations.main import add_task, showtasks
 
 @click.group()
 def cli():

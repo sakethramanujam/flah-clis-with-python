@@ -1,13 +1,13 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
-    name="todo",
+    name="td",
     version="0.0.1",
-    py_modules=["todo"],
     include_package_data=True,
     install_requires=["click"],
+    packages=find_packages(),
     entry_points="""
         [console_scripts]
-        todo=todo:cli
+        td=todo.cli:cli
     """,
 )
