@@ -11,7 +11,7 @@ def main():
     filename = sys.argv[0]
     name = sys.argv[1]
     count = int(sys.argv[2])
-    print(f"Running {filename}...")
+    print(f"Running {filename}...") 
     if not count:
         say_hello(name=name)
     else:
