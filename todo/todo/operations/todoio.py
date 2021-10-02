@@ -41,8 +41,3 @@ def write(tasklist: dict, todofp: str = todofp):
     except Exception as e:
         print(f"Error {e} occured when updating tasks!")
         return 1
-
-
-
-
-    

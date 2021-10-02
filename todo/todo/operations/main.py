@@ -4,7 +4,7 @@ from .todoio import read, write
 
 def add_task(desc:str):
     if not desc:
-        click.echo("Cannot add an empty task")
+        print("Cannot add an empty task")
     tasks = read()
     task_id = str(uuid.uuid4()).split('-')[0]
     tasks[task_id]={'desc':desc,'status':'nope'}
@@ -62,5 +62,3 @@ def update_task_state(taskid:str, status:str):
     print(f"Task:{taskid} has been marked {status}")
     show_tasks()
     return 0
-    
-
