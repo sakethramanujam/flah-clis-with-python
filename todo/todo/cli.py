@@ -7,8 +7,7 @@ def cli():
     Todo App for the command line
     """
 
-@click.group
-@click.command()
+@cli.group()
 def todo():
     """
     Manages the todo cli
@@ -19,3 +18,7 @@ def todo():
 def add(desc):
     add_task(desc)
     click.echo(f"Task {desc} added to the list!")
+
+@todo.command("show")
+def show():
+    showtasks()
