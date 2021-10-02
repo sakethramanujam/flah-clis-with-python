@@ -19,10 +19,6 @@ def create_todo(todofp: str = todofp):
     """
     Create a todo.json file in a specified path
     """
-    task_item = {"task": {
-        "id": "",
-        "Description": "",
-        "status": ""}}
     template = {"tasks": {}}
     with open(todofp, 'w') as f:
         f.write(json.dumps(template))
@@ -45,3 +41,8 @@ def write(tasklist: dict, todofp: str = todofp):
     except Exception as e:
         print(f"Error {e} occured when updating tasks!")
         return 1
+
+
+
+
+    
